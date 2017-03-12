@@ -13,4 +13,7 @@ class Task < ApplicationRecord
     	super(t)
     	self[:content_html] = FORMAT.call(t)
     end
+
+    validates :user_id, presence: true
+    validates :content, presence: true
 end
